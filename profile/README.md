@@ -17,8 +17,7 @@ Whether you're here to contribute or just explore, we’re happy to have you.
 
 ### 📚 Documentation
 
-Check out our documentation for setup, API reference, and feature breakdown:  
-📁 [`/docs`](./docs)
+Report: (will be a report link soon)
 
 Topics include:
 - Database schema
