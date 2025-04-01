@@ -17,7 +17,7 @@ Whether you're here to contribute or just explore, we’re happy to have you.
 
 ### 📚 Documentation
 
-Report: [Doc](https://onedrive.live.com/edit?id=3EF49F94E7FBF1CE!s262f987521bf4240af65e70ae48a733a&resid=3EF49F94E7FBF1CE!s262f987521bf4240af65e70ae48a733a&cid=3ef49f94e7fbf1ce&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy8zZWY0OWY5NGU3ZmJmMWNlL0VYV1lMeWFfSVVCQ3IyWG5DdVNLY3pvQmVtWUJvWXJwQV8yWXRKNmRjVzAtY1E_ZT1yT3Rha3E&migratedtospo=true&wdo=2)
+Report: [Doc]([https://onedrive.live.com/edit?id=3EF49F94E7FBF1CE!s262f987521bf4240af65e70ae48a733a&resid=3EF49F94E7FBF1CE!s262f987521bf4240af65e70ae48a733a&cid=3ef49f94e7fbf1ce&ithint=file%2Cdocx&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy8zZWY0OWY5NGU3ZmJmMWNlL0VYV1lMeWFfSVVCQ3IyWG5DdVNLY3pvQmVtWUJvWXJwQV8yWXRKNmRjVzAtY1E_ZT1yT3Rha3E&migratedtospo=true&wdo=2](https://1drv.ms/w/c/3ef49f94e7fbf1ce/EREZZNDc6dRDtMm8rNxUhhQB7tc4VvPoyn2tRKBZYXBrpg?e=LgP2zz))
 
 Topics include:
 - Database schema
