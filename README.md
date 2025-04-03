@@ -65,3 +65,42 @@ erDiagram
     artists }o--|| artist_songs: owns
 
 ```
+# ARCHITECTURE
+
+``` mermaid
+flowchart TD
+    %% Consumers
+    subgraph Clients
+        MobileApp["React Native"]
+    end
+
+    %% Backend Services Grouped
+    subgraph Server
+        CoreLogic["Core Business Services (Auth, Playlist, Song, etc.)"]
+        AILogic["AI Services (Custom Scoring Logic, Pitch Analysis, etc.)"]
+    end
+
+    %% External APIs
+    subgraph External APIs
+        YouTube["YouTube API"]
+        Spotify["Spotify API"]
+        Genius["Genius API"]
+    end
+
+    %% Database
+    subgraph Database
+        PostgreSQL["PostgreSQL (TypeORM)"]
+    end
+
+    %% Flow
+    MobileApp --> CoreLogic
+    MobileApp --> AILogic
+
+    CoreLogic --> YouTube
+    CoreLogic --> Spotify
+    CoreLogic --> Genius
+
+    CoreLogic --> PostgreSQL
+    AILogic --> PostgreSQL
+
+```
