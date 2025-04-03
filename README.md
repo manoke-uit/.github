@@ -20,8 +20,8 @@ erDiagram
         string album
         string releasedDate "@IsDateString()"
         string duration "@IsMilitaryTime()" 
-        string youtubeLink "for video"
-        string spotifyApiLink "audio for scoring"
+        string youtubeUrl "for video"
+        string spotifyApiUrl "audio for scoring"
     }
     playlists {
         int id PK "auto gen"
