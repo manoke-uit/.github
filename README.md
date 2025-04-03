@@ -75,7 +75,7 @@ flowchart TD
     end
 
     %% Backend Services Grouped
-    subgraph Server
+    subgraph NestJS Server
         CoreLogic["Core Business Services (Auth, Playlist, Song, etc.)"]
         AILogic["AI Services (Custom Scoring Logic, Pitch Analysis, etc.)"]
     end
