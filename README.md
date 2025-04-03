@@ -46,12 +46,20 @@ erDiagram
         int songId FK "part of PK"
     }
     scores {
-        int id PK
+        uuid id PK
         int userId FK
         int songId FK
         string audio_url "user's recording"
         float finalScore
         timestamp createdAt "DEFAULT CURRENT_TIMESTAMP"
+    }
+    notifications {
+        uuid id PK
+        int userId FK
+        string title
+        text description
+        timestamp createdAt "DEFAULT CURRENT_TIMESTAMP"
+        boolean isRead
     }
 
     users }o--|| friends: user_id_1
@@ -63,6 +71,7 @@ erDiagram
     songs }o--|| artist_songs: belongs
     playlists }o--|| playlist_songs: has
     artists }o--|| artist_songs: owns
+    users }o..|| notifications: has
 
 ```
 # ARCHITECTURE
