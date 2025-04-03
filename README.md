@@ -1,5 +1,5 @@
 # DATABASE SCHEMA
-```
+``` mermaid
 erDiagram
     users {
         int id PK "auto gen"
