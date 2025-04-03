@@ -51,6 +51,7 @@ erDiagram
         int songId FK
         string audio_url "user's recording"
         float finalScore
+        timestamp createdAt "DEFAULT CURRENT_TIMESTAMP"
     }
 
     users }o--|| friends: user_id_1
