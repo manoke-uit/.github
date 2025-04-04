@@ -29,7 +29,6 @@ erDiagram
         string title "playlist's title"
         string imageUrl "nullable"
         text description
-        string coverUrl "playlist's photo"
         uuid userId FK
     }
     playlist_songs {
