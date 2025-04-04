@@ -6,7 +6,7 @@ erDiagram
         string displayName
         string email
         string password "hashed"
-        string avatarUrl
+        string imageUrl "nullable"
         timestamp createdAt "DEFAULT CURRENT_TIMESTAMP"
     }
     friends {
@@ -18,6 +18,7 @@ erDiagram
         int id PK "auto gen"
         string title
         string album
+        string imageUrl "nullable"
         string releasedDate "@IsDateString()"
         string duration "@IsMilitaryTime()" 
         string youtubeUrl "for video"
@@ -26,6 +27,7 @@ erDiagram
     playlists {
         int id PK "auto gen"
         string title "playlist's title"
+        string imageUrl "nullable"
         text description
         string coverUrl "playlist's photo"
         int userId
@@ -36,9 +38,8 @@ erDiagram
     }
     artists {
         int id PK "auto gen"
-        string stageName
-        string fullName
-        string birthday "@IsDateString()"
+        string name
+        string imageUrl "nullable"
         int popularity "out of 100"
     }
     artist_songs {
