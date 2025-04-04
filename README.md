@@ -61,18 +61,18 @@ erDiagram
         timestamp createdAt "DEFAULT CURRENT_TIMESTAMP"
         boolean isRead
     }
-
+    
+    songs }o--|| artist_songs: belongs
+    users }o..|| notifications: has
     users }o--|| friends: user_id_1
     users }o--|| friends: user_id_2
     users }|..|| playlists: has
-    users }o..|| scores: has
     songs }o..|| scores: has
-    songs }o--|| playlist_songs: has
-    songs }o--|| artist_songs: belongs
+    users }o..|| scores: has
     playlists }o--|| playlist_songs: has
+    songs }o--|| playlist_songs: has
     artists }o--|| artist_songs: owns
-    users }o..|| notifications: has
-
+    
 ```
 # ARCHITECTURE
 
