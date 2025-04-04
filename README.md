@@ -2,7 +2,7 @@
 ``` mermaid
 erDiagram
     users {
-        int id PK "auto gen"
+        uuid id PK "auto gen"
         string displayName
         string email
         string password "hashed"
@@ -10,12 +10,12 @@ erDiagram
         timestamp createdAt "DEFAULT CURRENT_TIMESTAMP"
     }
     friends {
-        int userId_1 FK "part of PK"
-        int userId_2 FK "part of PK"
+        uuid userId_1 FK "part of PK"
+        uuid userId_2 FK "part of PK"
         enum status "'pending' | 'accepted' | 'rejected'"
     }
     songs {
-        int id PK "auto gen"
+        uuid id PK "auto gen"
         string title
         string album
         string imageUrl "nullable"
@@ -25,38 +25,38 @@ erDiagram
         string spotifyApiUrl "audio for scoring"
     }
     playlists {
-        int id PK "auto gen"
+        uuid id PK "auto gen"
         string title "playlist's title"
         string imageUrl "nullable"
         text description
         string coverUrl "playlist's photo"
-        int userId
+        uuid userId FK
     }
     playlist_songs {
-        int playlistId FK "part of PK"
-        int songId FK "part of PK"
+        uuid playlistId FK "part of PK"
+        uuid songId FK "part of PK"
     }
     artists {
-        int id PK "auto gen"
+        uuid id PK "auto gen"
         string name
         string imageUrl "nullable"
         int popularity "out of 100"
     }
     artist_songs {
-        int artistId FK "part of PK"
-        int songId FK "part of PK"
+        uuid artistId FK "part of PK"
+        uuid songId FK "part of PK"
     }
     scores {
         uuid id PK
-        int userId FK
-        int songId FK
+        uuid userId FK
+        uuid songId FK
         string audio_url "user's recording"
         float finalScore
         timestamp createdAt "DEFAULT CURRENT_TIMESTAMP"
     }
     notifications {
         uuid id PK
-        int userId FK
+        uuid userId FK
         string title
         text description
         timestamp createdAt "DEFAULT CURRENT_TIMESTAMP"
