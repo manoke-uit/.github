@@ -8,6 +8,7 @@ erDiagram
         string password "hashed"
         string imageUrl "nullable"
         timestamp createdAt "DEFAULT CURRENT_TIMESTAMP"
+        string adminSecret "nullable"
     }
     friends {
         uuid userId_1 FK "part of PK"
@@ -20,7 +21,7 @@ erDiagram
         string title
         string albumTitle
         string imageUrl "nullable"
-        string releasedDate "@IsDateString()"
+        date releasedDate "@IsDateString()"
         string duration "int as for miliseconds" 
         string youtubeUrl "for video"
         string spotifyApiUrl "audio for scoring"
@@ -65,8 +66,8 @@ erDiagram
     
     songs }o--|| artist_songs: belongs
     users }o..|| notifications: has
-    users }o--|| friends: userId_1
-    users }o--|| friends: userId_2
+    users }o--|| friends: user_id_1
+    users }o--|| friends: user_id_2
     users }|..|| playlists: has
     songs }o..|| scores: has
     users }o..|| scores: has
