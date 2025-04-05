@@ -95,7 +95,7 @@ flowchart TD
     subgraph External APIs
         YouTube["YouTube API"]
         Spotify["Spotify API"]
-        Genius["Genius API"]
+        Whisper["OpenAI Whisper API"]
     end
 
     %% Database
@@ -104,14 +104,16 @@ flowchart TD
     end
 
     %% Flow
+    
     MobileApp --> CoreLogic
     MobileApp --> AILogic
 
     CoreLogic --> YouTube
     CoreLogic --> Spotify
-    CoreLogic --> Genius
 
     CoreLogic --> PostgreSQL
     AILogic --> PostgreSQL
+    AILogic --> Whisper
+
 
 ```
