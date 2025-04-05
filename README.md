@@ -49,7 +49,7 @@ erDiagram
         uuid id PK
         uuid userId FK
         uuid songId FK
-        string audio_url "user's recording"
+        string audioUrl "user's recording"
         float finalScore
         timestamp createdAt "DEFAULT CURRENT_TIMESTAMP"
     }
