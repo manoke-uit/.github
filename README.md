@@ -108,12 +108,12 @@ flowchart TD
     MobileApp --> CoreLogic
     MobileApp --> AILogic
 
-    CoreLogic --> YouTube
-    CoreLogic --> Spotify
-
-    CoreLogic --> PostgreSQL
     AILogic --> PostgreSQL
     AILogic --> Whisper
+
+    CoreLogic --> YouTube
+    CoreLogic --> Spotify
+    CoreLogic --> PostgreSQL
 
 
 ```
