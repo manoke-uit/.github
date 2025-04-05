@@ -2,7 +2,7 @@
 ``` mermaid
 erDiagram
     users {
-        uuid id PK "auto gen"
+        uuid id PK "auto inc"
         string displayName
         string email
         string password "hashed"
@@ -15,9 +15,9 @@ erDiagram
         enum status "'pending' | 'accepted' | 'rejected'"
     }
     songs {
-        uuid id PK "auto gen"
+        uuid id PK "auto inc"
         string title
-        string album
+        string albumTitle
         string imageUrl "nullable"
         string releasedDate "@IsDateString()"
         string duration "@IsMilitaryTime()" 
@@ -25,7 +25,7 @@ erDiagram
         string spotifyApiUrl "audio for scoring"
     }
     playlists {
-        uuid id PK "auto gen"
+        uuid id PK "auto inc"
         string title "playlist's title"
         string imageUrl "nullable"
         text description
@@ -36,7 +36,7 @@ erDiagram
         uuid songId FK "part of PK"
     }
     artists {
-        uuid id PK "auto gen"
+        uuid id PK "auto inc"
         string name
         string imageUrl "nullable"
         int popularity "out of 100"
@@ -46,7 +46,7 @@ erDiagram
         uuid songId FK "part of PK"
     }
     scores {
-        uuid id PK
+        uuid id PK "auto inc"
         uuid userId FK
         uuid songId FK
         string audioUrl "user's recording"
@@ -54,7 +54,7 @@ erDiagram
         timestamp createdAt "DEFAULT CURRENT_TIMESTAMP"
     }
     notifications {
-        uuid id PK
+        uuid id PK "auto inc"
         uuid userId FK
         string title
         text description
