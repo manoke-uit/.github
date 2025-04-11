@@ -112,3 +112,6 @@ flowchart TD
     AILogic --> PostgreSQL
 
 ```
+# SPOTIFY API CLIENT CREDENTIALS FLOW
+
+![Spotify API Flow](https://developer-assets.spotifycdn.com/images/documentation/web-api/auth-client-credentials.png)
