@@ -159,3 +159,7 @@ flowchart TD
   "uri": "spotify:artist:4Z8W4fKeB5YxbusRsdQVPb"
 }
 ```
+
+# GOOGLE OAUTH 2.0 FLOW
+
+![Google OAuth 2.0 Flow](https://developers.google.com/static/identity/protocols/oauth2/images/flows/authorization-code.png)
