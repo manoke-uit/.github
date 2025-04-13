@@ -112,11 +112,15 @@ flowchart TD
     AILogic --> PostgreSQL
 
 ```
-# SPOTIFY API CLIENT CREDENTIALS FLOW
+# EXTERNAL APIS
+
+## SPOTIFY 
+
+### Spotify API Client Credentals Flow
 
 ![Spotify API Flow](https://developer-assets.spotifycdn.com/images/documentation/web-api/auth-client-credentials.png)
 
-## Spotify Sample JSON Response
+### Spotify Sample JSON Response
 ``` js
 {
   "external_urls": {
@@ -159,7 +163,52 @@ flowchart TD
   "uri": "spotify:artist:4Z8W4fKeB5YxbusRsdQVPb"
 }
 ```
+## YOUTUBE
 
-# GOOGLE OAUTH 2.0 FLOW
+### Youtube Sample JSON Response
+``` js
+URL: https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=YOUR_API_KEY
+     &part=snippet,statistics&fields=items(id,snippet,statistics)
+
+Description: This example adds the fields parameter to remove all
+             kind and etag properties from the API response.
+
+API response:
+
+{ 
+ "videos": [
+  {
+   "id": "7lCDEYXw3mM",
+   "snippet": { 
+    "publishedAt": "2012-06-20T22:45:24.000Z",
+    "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+    "title": "Google I/O 101: Q&A On Using Google APIs",
+    "description": "Antonio Fuentes speaks to us and takes questions on working with Google APIs and OAuth 2.0.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/7lCDEYXw3mM/default.jpg"
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/7lCDEYXw3mM/mqdefault.jpg"
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/7lCDEYXw3mM/hqdefault.jpg"
+     }
+    },
+    "categoryId": "28"
+   },
+   "statistics": {
+    "viewCount": "3057",
+    "likeCount": "25",
+    "dislikeCount": "0",
+    "favoriteCount": "17",
+    "commentCount": "12"
+   }
+  }
+ ]
+}
+```
+
+## GOOGLE OAUTH 2.0 FLOW
 
 ![Google OAuth 2.0 Flow](https://developers.google.com/static/identity/protocols/oauth2/images/flows/authorization-code.png)
