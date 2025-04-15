@@ -24,7 +24,7 @@ erDiagram
         date releasedDate "@IsDateString()"
         string duration "int as for miliseconds" 
         string youtubeUrl "for video"
-        string spotifyApiUrl "audio for scoring"
+        string audioUrl "audio for scoring"
     }
     playlists {
         uuid id PK "auto inc"
@@ -39,6 +39,7 @@ erDiagram
     }
     artists {
         uuid id PK "auto inc"
+        string spotifyId "id from spotify api"
         string name
         string imageUrl "nullable"
         int popularity "out of 100"
