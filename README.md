@@ -18,6 +18,7 @@ erDiagram
     }
     songs {
         uuid id PK "auto inc"
+        text lyrics
         string title
         string albumTitle
         string imageUrl "nullable"
@@ -92,10 +93,18 @@ flowchart TD
         AILogic["AI Services (Custom Scoring Logic, Pitch Analysis, etc.)"]
     end
 
-    %% External APIs
-    subgraph External APIs
+    %% External Fetching Data APIs
+    subgraph External Data APIs
         YouTube["YouTube API"]
         Spotify["Spotify API"]
+        Deezer["Deezer API"]
+        Genius["Genius API"]
+    end
+
+    %% External Scoring Logic APIs
+    subgraph External Scoring APIs
+        Whisper["OpenAI Whisper API"]
+        BasicPitch["Basic Pitch Spotify API"]
     end
 
     %% Database
@@ -111,6 +120,10 @@ flowchart TD
     AILogic --> YouTube
     AILogic --> Spotify
     AILogic --> PostgreSQL
+    AILogic --> Deezer
+    AILogic --> Genius
+    AILogic --> Whisper
+    AILogic --> BasicPitch
 
 ```
 # EXTERNAL APIS
