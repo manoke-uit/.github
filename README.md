@@ -141,7 +141,6 @@ flowchart TD
     MobileApp --> FCM
     MobileApp --> Storage
     MobileApp --> GoogleOAuth --> CoreLogic
-
 ```
 # EXTERNAL APIS
 
