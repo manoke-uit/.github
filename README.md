@@ -82,48 +82,65 @@ erDiagram
 
 ``` mermaid
 flowchart TD
-    %% Consumers
+    %% Clients
     subgraph Clients
-        MobileApp["React Native"]
+        MobileApp["React Native (Mobile App)"]
     end
 
-    %% Backend Services Grouped
-    subgraph NestJS Server
-        CoreLogic["Core Business Services (Auth, Playlist, Song, etc.)"]
-        AILogic["AI Services (Custom Scoring Logic, Pitch Analysis, etc.)"]
+    %% Backend Services
+    subgraph NestJS Backend
+        CoreLogic["Core Logic (Auth, Playlist, Song, etc.)"]
+        AILogic["AI Scoring Logic (30s Comparison, Result Aggregation)"]
     end
 
-    %% External Fetching Data APIs
-    subgraph External Data APIs
+    %% OAuth Google
+        subgraph Auth
+        GoogleOAuth["Google OAuth 2.0"]
+    end
+
+
+    %% External Data APIs
+    subgraph Data APIs
         YouTube["YouTube API"]
         Spotify["Spotify API"]
         Deezer["Deezer API"]
-        Genius["Genius API"]
+        LyricsAPI["Lyrics.ovh"]
     end
 
-    %% External Scoring Logic APIs
-    subgraph External Scoring APIs
-        Whisper["OpenAI Whisper API"]
-        BasicPitch["Basic Pitch Spotify API"]
+    %% AI Microservices (Self-hosted)
+    subgraph Self-hosted AI Microservices
+        Whisper["Whisper (Transcription)"]
+        BasicPitch["Basic Pitch (Pitch-to-MIDI)"]
+    end
+
+    %% Cloud Services
+    subgraph Firebase
+        FCM["FCM (Notifications)"]
+        Storage["Cloud Storage (Audio Uploads)"]
     end
 
     %% Database
     subgraph Database
-        PostgreSQL["PostgreSQL (TypeORM)"]
+        PostgreSQL["PostgreSQL (via TypeORM)"]
     end
 
     %% Flow
-    
-    MobileApp --> CoreLogic --> AILogic
+    MobileApp --> CoreLogic
+    CoreLogic --> AILogic
 
+    CoreLogic --> Firebase
+    CoreLogic --> PostgreSQL
 
-    AILogic --> YouTube
     AILogic --> Spotify
-    AILogic --> PostgreSQL
     AILogic --> Deezer
-    AILogic --> Genius
+    AILogic --> YouTube
+    AILogic --> LyricsAPI
     AILogic --> Whisper
     AILogic --> BasicPitch
+
+    MobileApp --> FCM
+    MobileApp --> Storage
+    MobileApp --> GoogleOAuth --> CoreLogic
 
 ```
 # EXTERNAL APIS
