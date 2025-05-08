@@ -29,7 +29,7 @@ erDiagram
     }
     playlists {
         uuid id PK "auto inc"
-        string title "playlist's title"
+        string title "unique"
         string imageUrl "nullable"
         text description
         uuid userId FK
